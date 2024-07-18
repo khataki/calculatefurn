@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Подбор фурнитуры для стеклянного козырька</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..700;1,100..700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>Подбор фурнитуры для стеклянного козырька</h1>
+            <p>Введите исходные данные для расчёта:</p>
+        </div>
+
+        <!-- Слайдер для ширины козырька -->
+        <div class="slider-wrapper">
+            <label for="width">Ширина (вылет) козырька, мм</label>
+            <input class="slider" type="range" id="width" name="width" min="200" max="3000" value="1000" step="100">
+            <div class="slider-values">
+              <span class="value" data-value="200">200</span>
+              <span class="value" data-value="900">900</span>
+              <span class="value" data-value="1600">1600</span>
+              <span class="value" data-value="2300">2300</span>
+              <span class="value" data-value="3000">3000</span>
+            </div>
+          </div>
+          <div class="slider-value-display">
+            Текущая ширина: <span id="widthValue">1000</span> мм
+          </div>
+
+          
+
+        <!-- Ввод длины козырька -->
+        <div class="input-container">
+            <label for="length">Длина козырька (вдоль здания), мм</label>
+            <input type="text" id="length" name="length" value="2000">
+        </div>
+
+        <!-- Ввод количества козырьков -->
+        <div class="input-container">
+            <label for="count">Количество козырьков, штук</label>
+            <input type="text" id="count" name="count" value="1">
+        </div>
+
+        <!-- Выбор города установки -->
+        <div id="citySelectContainer"></div>
+        <!-- Выбор типа фасада -->
+        <div class="select-container">
+            <label for="facade">Тип фасада здания</label>
+            <select id="facade" name="facade">
+                <option value="несущая стена без утепления">Несущая стена без утепления</option>
+                <option value="несущая стена с утеплением толщиной до 50 мм">Несущая стена с утеплением толщиной 50 мм</option>
+                <option value="несущая стена с утеплением толщиной свыше 50 мм">Несущая стена с утеплением толщиной свыше 50 мм</option>
+                <option value="вентилируемый фасад">Вентилируемый фасад</option>
+                <option value="стоечно-ригельная система">Стоечно-ригельная система</option>
+                <option value="сендвич панель">Сендвич панель</option>
+            </select>
+        </div>
+
+        <!-- Допки -->
+
+        <div class="select-container hidden" id="ventFacadeOptions">
+            <label for="ventFacadeNeedAnchors">Есть необходимость в закладных элементах?</label>
+            <select id="ventFacadeNeedAnchors" name="ventFacadeNeedAnchors">
+                <option value="yes">Да</option>
+                <option value="no">Нет</option>
+            </select>
+        </div>
+        <div class="select-container hidden" id="standRigSystemOptions">
+            <label for="standRigSystem">Выбор:</label>
+            <select id="standRigSystem" name="standRigSystem">
+                <option value="through">Сверление стойки насквозь</option>
+                <option value="aisi304">Закладная aisi 304</option>
+                <option value="steelSt3">Закладная сталь Ст 3</option>
+            </select>
+        </div>
+        <div class="select-container hidden" id="sandwichPanelOptions">
+            <label for="sandwichPanelNeedAnchors">Есть необходимость в закладных элементах?</label>
+            <select id="sandwichPanelNeedAnchors" name="sandwichPanelNeedAnchors">
+                <option value="yes">Да</option>
+                <option value="no">Нет</option>
+            </select>
+        </div>
+
+        <!-- Ограничение по длине стекла -->
+        <div class="select-container">
+            <label for="glassLimit">Ограничение по длине стекла, мм</label>
+            <select id="glassLimit" name="glassLimit">
+                <option value="3200">до 3200 мм</option>
+                <option value="1200">до 1200 мм</option>
+                <option value="1400">до 1400 мм</option>
+                <option value="1600">до 1600 мм</option>
+                <option value="1800">до 1800 мм</option>
+                <option value="2000">до 2000 мм</option>
+                <option value="2300">до 2300 мм</option>
+                <option value="2500">до 2500 мм</option>
+                <option value="2800">до 2800 мм</option>
+                <option value="3000">до 3000 мм</option>
+
+            </select>
+        </div>
+
+        <!-- Марка нержавеющей стали фурнитуры -->
+        <div class="radio-container">
+            <p>Марка нержавеющей стали фурнитуры</p>
+            <input type="radio" id="aisi304" name="steel" value="aisi304" checked>
+            <label for="aisi304">aisi 304</label>
+            <input type="radio" id="aisi316" name="steel" value="aisi316">
+            <label for="aisi316">aisi 316</label>
+        </div>
+
+        <!-- Покупали ли раньше в нашей организации -->
+        <div class="radio-container">
+            <p>Покупали ли раньше в нашей организации</p>
+            <input type="radio" id="previousPurchaseYes" name="previousPurchase" value="да">
+            <label for="previousPurchaseYes">Да</label>
+            <input type="radio" id="previousPurchaseNo" name="previousPurchase" value="нет" checked>
+            <label for="previousPurchaseNo">Нет</label>
+        </div>
+
+        <!-- Используем ли сдвоенные комплекты -->
+        <div class="radio-container">
+            <p>Используем ли сдвоенные комплекты</p>
+            <input type="radio" id="doubleKitsNo" name="doubleKits" value="no" checked>
+            <label for="doubleKitsNo">Нет</label>
+            <input type="radio" id="doubleKitsYes" name="doubleKits" value="yes">
+            <label for="doubleKitsYes">Да</label>
+        </div>
+
+        <div class="" id="imageContainer" style="display: none;">
+            <img id="randomImage" src="/images/image1.jpg" alt="Фурнитура">
+        </div>
+
+
+<!-- Контейнер для заказов -->
+<div id="ordersContainer"></div>
+
+<!-- Кнопка для расчета всех заказов -->
+<button class="button" id="calculateButton"><i class="fas fa-calculator"></i> Рассчитать</button>
+
+<div class="results hidden" id="results"></div>
+
+<div id="totalCost" class="total-cost"></div>
+
+
+        <!-- Контактная информация -->
+        <div class="contact-info">
+            <label for="name">Ваше имя/название Организации</label>
+            <input type="text" id="name" name="name" placeholder="Иван">
+
+            <label for="phone">Контактный телефон</label>
+            <input type="text" id="phone" name="phone" placeholder="+7 999 777 77 77">
+
+            <label for="email">Ваш e-mail</label>
+            <input type="text" id="email" name="email" placeholder="info@ytrr.ru">
+        </div>
+<!-- Кнопка для получения предложения  -->
+        <button class="button" id="commercialOfferButton">Получить коммерческое предложение</button>
+
+        <!-- Кнопка для запроса счёта -->
+        <button id="paymentInvoiceButton" class="button">Запросить счёт на оплату</button>
+
+        <!-- Согласие на обработку персональных данных -->
+        <div class="checkbox-container">
+            <input type="checkbox" id="consent" name="consent" required>
+            <label for="consent">Я согласен на обработку своих персональных данных в соответствии с Политикой конфиденциальности</label>
+        </div>
+
+        <label for="bank">Реквизиты вашей организации</label>
+        <input type="text" id="bank" name="bank" value="-">
+
+
+    </div>
+
+    <div class="message" id="message"></div>
+
+    <script type="module" src="/scripts/script.js"></script>
+    <script src="/scripts/components/add.js"></script>
+
+</body>
+</html>

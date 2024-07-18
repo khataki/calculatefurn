@@ -1,0 +1,615 @@
+* {
+    font-family: 'Montserrat', sans-serif;
+}
+
+body {
+
+    background-color: #f5f5f5;
+    color: #333;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+    font-weight: 300;
+    box-sizing: border-box;
+}
+
+/* Стили для фокуса */
+input[type="text"]:focus,
+select:focus {
+    outline: none;
+    border-bottom: 2px solid #3a86ff;
+}
+
+/* Стили для textarea */
+textarea {
+    width: 100%;
+    padding: 10px;
+    margin: 5px 0;
+    border: none;
+    border-bottom: 2px solid #d8deec;
+    background-color: #fff;
+    color: #858e98;
+    font-size: 14px;
+    transition: border-bottom-color 0.3s ease-in-out;
+}
+
+/* Стили для фокуса textarea */
+textarea:focus {
+    outline: none;
+    border-bottom: 2px solid #3a86ff;
+}
+
+.header {
+    border-bottom: 2px solid #d8deec;
+    margin-bottom: 20px;
+    width: 100%;
+}
+
+.container {
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    max-width: 600px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+}
+
+#citySelectContainer {
+    width: 100%;
+}
+
+h1, h2, h3 {
+    font-size: 18px;
+    color: #77818b;
+}
+
+p {
+    margin-bottom: 20px;
+    color: #858e98;
+}
+
+.slider-container,
+.input-container,
+.select-container,
+.radio-container,
+.results,
+.contact-info,
+.checkbox-container {
+    margin-bottom: 15px;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: #858e98;
+}
+
+input[type="text"],
+select {
+    width: 100%;
+    padding: 5px 0px;
+    margin: 5px 0;
+    border: none;
+    border-bottom: 2px solid #d8deec;
+    cursor: pointer;
+    color: #858e98;
+}
+
+input[type="radio"] {
+    margin-right: 10px;
+    cursor: pointer;
+}
+
+.radio-container p {
+    font-weight: bold;
+}
+
+span {
+    display: inline-block;
+    margin-top: 5px;
+    font-size: 14px;
+}
+
+hr {
+    border: 0;
+    border-top: 1px solid #ccc;
+    margin: 20px 0;
+}
+
+.results {
+    font-size: 12px;
+}
+
+.result-description {
+    margin: 0;
+    font-size: 13px;
+    padding: 5px;
+}
+
+.result-description-container {
+    margin: 0 0 20px 0;
+}
+
+.results h2 {
+    font-size: 16px;
+    margin-bottom: 10px;
+}
+
+.results h3 {
+    font-size: 14px;
+    margin: 10px 0;
+}
+
+.button {
+    display: block;
+    width: 60%;
+    padding: 10px;
+    background-color: #fff;
+    color: #007bff;
+    text-align: center;
+    border: none;
+    border-radius: 15px;
+    cursor: pointer;
+    text-decoration: none;
+    font-size: 16px;
+    margin-bottom: 20px;
+    border: 2px solid #007bff;
+    transition: background-color 0.3s, color 0.3s, box-shadow 0.3s;
+}
+
+.button:hover {
+    background-color: #007bff;
+    cursor: pointer;
+    color: #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.button:active {
+    background-color: #004bff;
+}
+
+.delete-order {
+    margin-top: 20px;
+    display: block;
+    width: 60%;
+    padding: 10px;
+    background-color: #fff;
+    color: rgb(141, 5, 5);
+    text-align: center;
+    border: none;
+    border-radius: 15px;
+    cursor: pointer;
+    text-decoration: none;
+    font-size: 16px;
+    margin-bottom: 20px;
+    border: 2px solid rgb(141, 5, 5);
+    transition: background-color 0.3s, color 0.3s, box-shadow 0.3s;
+}
+
+.delete-order:hover {
+    background-color: rgb(141, 5, 5);
+    color: white;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.delete-order:active {
+    background-color: rgb(119, 4, 4);
+    border-color: rgb(119, 4, 4);
+}
+
+.contact-info label {
+    margin-top: 10px;
+}
+
+.contact-info input {
+    margin-bottom: 10px;
+}
+
+.slider-wrapper {
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+.slider {
+    margin: 0;
+    padding: 0px;
+    width: 100%;
+    height: 3px;
+    background: #3a86ff;
+    border-radius: 0;
+    outline: none;
+}
+
+.slider::-webkit-slider-thumb {
+    appearance: none;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: #3a86ff;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.slider::-moz-range-thumb {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: #3a86ff;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.slider-values {
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+}
+
+.slider-values span {
+    position: relative;
+    font-size: 12px;
+    color: #858e98;
+}
+
+.slider-values span::before {
+    content: '';
+    position: absolute;
+    top: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 3px;
+    height: 10px;
+    z-index: 0;
+    border-radius: 3px;
+    background: #e0e0e0;
+}
+
+.slider-value-display {
+    font-size: 10px;
+    color: #858e98;
+    margin-bottom: 20px;
+}
+
+#widthValue {
+    color: #858e98;
+    font-size: 10px;
+}
+
+input[type="range" i] {
+    border: none;
+    outline: none;
+}
+
+/* Основные стили для ползунка */
+input[type="range"] {
+    -webkit-appearance: none;
+    width: 100%;
+    height: 3px;
+    background: transparent;
+    outline: none;
+    position: relative;
+    z-index: 1;
+}
+
+/* Трек для WebKit браузеров (Chrome, Safari) */
+input[type="range"]::-webkit-slider-runnable-track {
+    width: 100%;
+    height: 3px;
+    background: #e0e0e0;
+    border-radius: 5px;
+}
+
+input[type="range"].progress::-webkit-slider-runnable-track {
+    background: linear-gradient(to right, #3a86ff var(--percent, 0%), #e0e0e0 var(--percent, 0%));
+}
+
+/* Стили для бегунка WebKit браузеров */
+input[type="range"]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: #3a86ff;
+    cursor: pointer;
+    margin-top: -3.5px;
+}
+
+/* Трек и прогресс для Firefox */
+input[type="range"]::-moz-range-track {
+    width: 100%;
+    height: 3px;
+    background: #e0e0e0;
+    border-radius: 5px;
+}
+
+input[type="range"]::-moz-range-progress {
+    background: #3a86ff;
+    border-radius: 5px;
+}
+
+/* Бегунок для Firefox */
+input[type="range"]::-moz-range-thumb {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: #3a86ff;
+    cursor: pointer;
+}
+
+/* Стили для Internet Explorer */
+input[type="range"]::-ms-track {
+    width: 100%;
+    height: 3px;
+    background: transparent;
+    border-color: transparent;
+    color: transparent;
+    cursor: pointer;
+}
+
+input[type="range"]::-ms-fill-lower {
+    background: #3a86ff;
+    border-radius: 5px;
+}
+
+input[type="range"]::-ms-fill-upper {
+    background: #e0e0e0;
+    border-radius: 5px;
+}
+
+input[type="range"]::-ms-thumb {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: #3a86ff;
+    cursor: pointer;
+}
+
+.slider-values .value.active {
+    color: #3a86ff;
+}
+
+.slider-values .value.active::before {
+    background: #3a86ff;
+}
+
+/* Скрываем стандартные радио-кнопки */
+input[type="radio"] {
+    display: none;
+}
+
+/* Стили для меток, связанных с радио-кнопками */
+.radio-container label {
+    display: inline-block;
+    position: relative;
+    padding-left: 20px;
+    margin-right: 20px;
+    cursor: pointer;
+    font-size: 14px;
+    color: #858e98;
+    user-select: none;
+}
+
+/* Кастомный круг для радио-кнопок */
+.radio-container label::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 14px;
+    height: 14px;
+    border: 2px solid #e0e0e0;
+    border-radius: 50%;
+    background-color: #fff;
+    transition: border-color 0.3s, background-color 0.3s;
+    box-sizing: border-box;
+}
+
+/* Стилизация для активного состояния радио-кнопки */
+input[type="radio"]:checked + label::before {
+    border-color: #3a86ff;
+    background-color: #3a86ff;
+}
+
+/* Маленькая точка внутри кастомного круга */
+input[type="radio"]:checked + label::before::after {
+    content: '';
+    position: absolute;
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background-color: #fff;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+/* Скрываем стандартные чекбоксы */
+input[type="checkbox"] {
+    display: none;
+}
+
+/* Стили для меток, связанных с чекбоксами */
+.checkbox-container label {
+    display: inline-block;
+    position: relative;
+    padding-left: 25px;
+    cursor: pointer;
+    font-size: 14px;
+    color: #858e98;
+    user-select: none;
+    margin-bottom: 15px;
+}
+
+/* Кастомный квадрат для чекбоксов */
+.checkbox-container label::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 16px;
+    height: 16px;
+    border: 2px solid #e0e0e0;
+    border-radius: 4px;
+    background-color: #fff;
+    transition: border-color 0.3s, background-color 0.3s;
+    box-sizing: border-box;
+}
+
+/* Стилизация для активного состояния чекбокса */
+input[type="checkbox"]:checked + label::before {
+    border-color: #3a86ff;
+    background-color: #3a86ff;
+    background-image: url('data:image/svg+xml;utf8,<svg fill="%23ffffff" version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 78.369 78.369" xml:space="preserve" stroke="%23ffffff"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <g> <path d="M78.049,19.015L29.458,67.606c-0.428,0.428-1.121,0.428-1.548,0L0.32,40.015c-0.427-0.426-0.427-1.119,0-1.547l6.704-6.704 c0.428-0.427,1.121-0.427,1.548,0l20.113,20.112l41.113-41.113c0.429-0.427,1.12-0.427,1.548,0l6.703,6.704 C78.477,17.894,78.477,18.586,78.049,19.015z"></path> </g> </g></svg>');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 10px 10px;
+}
+
+/* Стили для состояния наведения */
+.checkbox-container label:hover::before {
+    border-color: #3a86ff;
+}
+
+/* Основные стили для выпадающего списка */
+select {
+    appearance: none;
+    border-bottom: 2px solid #d8deec;
+    background-color: #fff;
+    color: #858e98;
+    font-size: 14px;
+    cursor: pointer;
+    width: 100%;
+    margin: 5px 0;
+}
+
+/* Стилизация для выпадающего списка в Safari и iOS */
+select::-ms-expand {
+    display: none;
+}
+
+select::-webkit-inner-spin-button,
+select::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+/* Стилизация для фокусного состояния */
+select:focus {
+    border-color: #3a86ff;
+    outline: none;
+}
+
+/* Псевдоэлемент для кастомной стрелки */
+.select-container {
+    position: relative;
+    display: inline-block;
+    width: 100%;
+}
+
+.select-container::after {
+    content: '▼';
+    font-size: 8px;
+    color: #858e98;
+    position: absolute;
+    right: 15px;
+    top: 65%;
+    transform: translateY(-50%);
+    pointer-events: none;
+}
+
+.select-container select {
+    padding-right: 35px;
+    box-sizing: border-box;
+}
+
+.message {
+    position: fixed;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #ffcc00;
+    padding: 10px 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    display: none;
+}
+
+#paymentInvoiceButton, #commercialOfferButton {
+    display: none;
+}
+
+.image-container {
+    width: 122px;
+    height: 122px;
+}
+
+.image-container img {
+    width: 100%;
+    height: 100%;
+}
+
+#randomImage {
+    width: 100%;
+    height: 100%;
+}
+
+.hidden {
+    display: none;
+}
+
+  .button {
+    display: inline-flex;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    cursor: pointer;
+    margin: 10px 0;
+  }
+  
+  .button i {
+    margin-right: 5px;
+  }
+
+  .total-cost-value {
+    font-weight: bold;
+    font-size: 24px;
+    color: #0056b3;
+  }
+  
+  .button:hover {
+    background-color: #0056b3;
+  }
+
+  .delete-button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    opacity: 0.5;
+  }
+
+  .delete-button:hover {
+    opacity: 1;
+  }
+  
+  .order-summary {
+    display: flex;
+  }
+  
+  .order-info {
+    display: flex;
+    flex-direction: column;
+  }
