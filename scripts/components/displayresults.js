@@ -37,5 +37,5 @@ export function displayResults({
 
   const randomIndex = Math.floor(Math.random() * images.length);
   const randomImage = images[randomIndex];
-  document.getElementById("randomImage").src = `images/${randomImage}`;
+  document.getElementById("randomImage").src = `./images/${randomImage}`;
 }
