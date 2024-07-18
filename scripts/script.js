@@ -226,7 +226,7 @@ debugger
               <p class="result-description">Цена фурнитуры на один козырёк: ${order.hardwareCost + order.doubleCost + order.anchorInfo.totalAnchorCost} рублей с НДС</p>
             </div>
             <div class="image-container">
-              <img id="orderImage${index}" src="images/${order.randomImage}" alt="Фурнитура">
+              <img id="orderImage${index}" src="/images/${order.randomImage}" alt="Фурнитура">
             </div>
           </div>
         </div>
