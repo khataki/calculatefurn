@@ -23,3 +23,35 @@ document.addEventListener('DOMContentLoaded', function () {
     });
     
 });
+
+document.addEventListener('DOMContentLoaded', function () {
+    const formInputs = document.querySelectorAll('.contact-info input');
+    const commercialOfferButton = document.getElementById('commercialOfferButton');
+    const paymentInvoiceButton = document.getElementById('paymentInvoiceButton');
+    const consentCheckbox = document.getElementById('consent');
+
+    function checkFormCompletion() {
+        let allFilled = true;
+        formInputs.forEach(input => {
+            if (input.value.trim() === '') {
+                allFilled = false;
+            }
+        });
+
+        if (allFilled && consentCheckbox.checked) {
+            commercialOfferButton.style.display = 'block';
+            paymentInvoiceButton.style.display = 'block';
+        } else {
+            commercialOfferButton.style.display = 'none';
+            paymentInvoiceButton.style.display = 'none';
+        }
+    }
+
+    formInputs.forEach(input => {
+        input.addEventListener('input', checkFormCompletion);
+    });
+
+    consentCheckbox.addEventListener('change', checkFormCompletion);
+
+    checkFormCompletion(); // Initial check to set button visibility on page load
+});
